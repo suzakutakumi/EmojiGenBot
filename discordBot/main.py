@@ -1,6 +1,6 @@
 import discord,os,random,requests
 
-TOKEN = os.environ['TOKEN']
+TOKEN = os.environ['DISCORDBOT_TOKEN']
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
