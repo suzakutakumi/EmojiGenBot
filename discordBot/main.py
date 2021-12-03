@@ -5,6 +5,9 @@ TOKEN = os.environ['DISCORDBOT_TOKEN']
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 
+# URL
+url = "https://emoji-gen.ninja/emoji_download?align=center&amp;back_color=00000000&amp;color=%s&amp;font=notosans-mono-bold&amp;locale=ja&amp;public_fg=true&amp;size_fixed=false&amp;stretch=true&amp;text=%s"
+
 def randHex():
     randomText=""
     for _ in range(6):
@@ -31,7 +34,7 @@ async def on_message(message):
         color=color.upper()+"FF"
         content=texts[2].replace("_","%0A")
 
-        data=requests.get("https://emoji-gen.ninja/emoji_download?align=center&amp;back_color=00000000&amp;color=%s&amp;font=notosans-mono-bold&amp;locale=ja&amp;public_fg=true&amp;size_fixed=false&amp;stretch=true&amp;text=%s"%(color,content)).content
+        data=requests.get(url%(color,content)).content
         
         name=texts[3] if len(texts)>=4 else texts[2]
 
