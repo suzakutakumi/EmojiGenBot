@@ -1,0 +1,11 @@
+[Unit]
+Description = Emoji Gen Bot
+
+[Service]
+WorkingDirectory=/opt/emojigenbot
+ExecStart=sudo ./main
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
